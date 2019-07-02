@@ -95,6 +95,7 @@ call plug#begin('~/.vim/plugged')
 "call vundle#begin('~/some/path/here')
 " let Vundle manage Vundle, required
 Plug 'Valloric/YouCompleteMe'
+"Plug 'mjbrownie/browser.vim'
 "Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 "Plugin 'tmhedberg/SimpylFold'
 "Plugin 'vhda/verilog_systemverilog.vim'
@@ -154,3 +155,8 @@ inoremap {{ {}<ESC>i
 "上面：陣列的宣告,需一次輸入兩個{{再按Enter
 
 
+"Set to use Ctrl to skip one word by click ctrl-arrow
+execute "set <xUp>=\e[1;*A" 
+execute "set <xDown>=\e[1;*B"
+execute "set <xRight>=\e[1;*C"
+execute "set <xLeft>=\e[1;*D"
