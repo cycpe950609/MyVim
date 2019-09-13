@@ -48,16 +48,16 @@ set cursorcolumn
 "highlight CursorLine cterm=bold ctermbg=DarkGray ctermfg=Yellow
 "highlight CursorColumn cterm=bold ctermbg=DarkGray 
 "YCM
-let g:ycm_global_ycm_extra_conf= '~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf=0 
-let g:ycm_show_diagnostics_ui=0
-let g:ycm_enable_diagnostic_signs=0
-let g:ycm_enable_diagnostic_highlighting=0
-"let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_semantic_triggers =  {
-			\ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
-			\ 'cs,lua,javascript': ['re!\w{2}'],
-			\ }
+"let g:ycm_global_ycm_extra_conf= '~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+"let g:ycm_confirm_extra_conf=0 
+"let g:ycm_show_diagnostics_ui=0
+"let g:ycm_enable_diagnostic_signs=0
+"let g:ycm_enable_diagnostic_highlighting=0
+""let g:ycm_autoclose_preview_window_after_completion = 1
+"let g:ycm_semantic_triggers =  {
+"			\ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+"			\ 'cs,lua,javascript': ['re!\w{2}'],
+"			\ }
 highlight PMenu ctermfg=0 ctermbg=242 guifg=black guibg=darkgrey
 highlight PMenuSel ctermfg=242 ctermbg=8 guifg=darkgrey guibg=black
 let g:ycm_add_preview_to_completeopt = 0
@@ -66,7 +66,7 @@ let g:ycm_add_preview_to_completeopt = 0
 set nocompatible              " be iMproved, required
 
 "ALE config
-let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0
 
 let g:ale_sign_error = 'E'
 let g:ale_sign_warning = 'W'
@@ -83,8 +83,10 @@ let g:ale_set_quickfix = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='wombat'
-let g:airline#extensions#tabline#left_sep = '|'
-let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
 "Rainbow indent
 let g:indent_guides_enable_on_vim_startup = 1
 
@@ -94,7 +96,7 @@ call plug#begin('~/.vim/plugged')
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 " let Vundle manage Vundle, required
-Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
 "Plug 'mjbrownie/browser.vim'
 "Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 "Plugin 'tmhedberg/SimpylFold'
@@ -102,9 +104,11 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'nathanaelkane/vim-indent-guides'
+Plug 'nathanaelkane/vim-indent-guides'
 "Plug 'gilligan/vim-lldb'
 Plug 'skywind3000/asyncrun.vim'
+Plug 'zxqfl/tabnine-vim'
+
 call plug#end()
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -135,7 +139,6 @@ nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>
 "let g:Powerline_symbols = 'fancy'
 "set encoding=utf-8
 "set fillchars+=stl:\ ,stlnc:\
-set term=xterm-256color
 set termencoding=utf-8
 
 

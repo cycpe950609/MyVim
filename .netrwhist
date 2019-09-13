@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =3
 let g:netrw_dirhist_1='/home/greygray/Programming/Tuturial/.metadata'
 let g:netrw_dirhist_2='/home/greygray/Programming/Tuturial/.metadata/.plugins'
+let g:netrw_dirhist_3='/home/computer-user/.cquery/cquery/build/CMakeFiles'
