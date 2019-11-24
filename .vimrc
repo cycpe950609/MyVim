@@ -95,7 +95,7 @@ let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = ''
 
 "Rainbow indent
-let g:indent_guides_enable_on_vim_startup = 1
+"let g:indent_guides_enable_on_vim_startup = 1
 
 
 "USE vim-plug INSTEAD !!!
@@ -111,7 +111,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'nathanaelkane/vim-indent-guides'
+"Plug 'nathanaelkane/vim-indent-guides'
 "Plug 'gilligan/vim-lldb'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'zxqfl/tabnine-vim'
