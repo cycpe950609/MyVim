@@ -22,7 +22,7 @@ set backspace=indent,eol,start
 syntax enable
 set clipboard=unnamed "在Vim中copy的所有内容都会上系统剪切板。
 set completeopt-=preview
-
+set encoding=utf-8
 
 set bg=dark
 set incsearch
@@ -100,9 +100,6 @@ let g:airline#extensions#tabline#right_alt_sep = ''
 
 "USE vim-plug INSTEAD !!!
 call plug#begin('~/.vim/plugged')
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-" let Vundle manage Vundle, required
 "Plug 'Valloric/YouCompleteMe'
 "Plug 'mjbrownie/browser.vim'
 "Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
@@ -114,7 +111,11 @@ Plug 'vim-airline/vim-airline-themes'
 "Plug 'nathanaelkane/vim-indent-guides'
 "Plug 'gilligan/vim-lldb'
 Plug 'skywind3000/asyncrun.vim'
-Plug 'zxqfl/tabnine-vim'
+" Plug 'zxqfl/tabnine-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'preservim/nerdtree'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 filetype plugin indent on    " required
@@ -130,6 +131,32 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 "
+"
+"
+" Setting for Coc
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 
 "Setting for asyncrun 
 " 自动打开 quickfix window ，高度为 6
